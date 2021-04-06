@@ -1,6 +1,7 @@
 DROP TABLE entrega_casa;
 DROP TABLE entrega_local;
 DROP TABLE corresponder;
+DROP TABLE componer;
 DROP TABLE caja;
 DROP TABLE factura;
 DROP TABLE pedido;
@@ -27,6 +28,7 @@ CREATE TABLE gerente(
 );
 CREATE TABLE empleado(
 	dni VARCHAR(9),
+	nombre VARCHAR(30),
 	sueldo MONEY,
 	dni_Gerente VARCHAR(9),
 	CONSTRAINT PK_Empleado PRIMARY KEY(dni),
@@ -40,13 +42,13 @@ CREATE TABLE cajero(
 );
 CREATE TABLE cocinero(
 	dni_Empleado VARCHAR(9),
-	antiguedad SMALLINT,
+	antiguedad DATE,
 	CONSTRAINT PK_Cocinero PRIMARY KEY(dni_Empleado),
 	CONSTRAINT FK_Cocinero_Empleado FOREIGN KEY(dni_Empleado) REFERENCES empleado(dni)
 );
 CREATE TABLE motero(
 	dni_Empleado VARCHAR(9),
-	tipoCarnet VARCHAR(30),
+	tipoCarnet VARCHAR(5),
 	CONSTRAINT PK_Motero PRIMARY KEY(dni_Empleado),
 	CONSTRAINT FK_Motero_Empleado FOREIGN KEY(dni_Empleado) REFERENCES empleado(dni)
 );
@@ -61,7 +63,7 @@ CREATE TABLE producto(
 	id Serial,
 	nombre VARCHAR(30),
 	disponibilidad BOOLEAN,
-	precio SMALLINT,
+	precio DECIMAL(4, 2),
 	CONSTRAINT PK_producto PRIMARY KEY(id)
 );
 CREATE TABLE cocinar(
@@ -103,12 +105,12 @@ CREATE TABLE cliente_Local(
 );
 CREATE TABLE cliente_Casa(
 	id_Cliente SERIAL,
-	direccion VARCHAR(60) UNIQUE NOT NULL,
+	direccion VARCHAR(100) UNIQUE NOT NULL,
 	CONSTRAINT PK_Cliente_Casa PRIMARY KEY(id_Cliente)
 );
 CREATE TABLE reclamacion(
 	id SERIAL,
-	descripcion VARCHAR(100),
+	descripcion TEXT,
 	CONSTRAINT PK_Reclamacion PRIMARY KEY(id)
 );
 CREATE TABLE pedido(
@@ -121,7 +123,6 @@ CREATE TABLE pedido(
 CREATE TABLE factura(
 	id SERIAL,
 	fecha DATE,
-	total SMALLINT,
 	modoPago VARCHAR(20),
 	id_Cliente SERIAL NOT NULL,
 	id_Reclamacion SERIAL,
@@ -148,6 +149,14 @@ CREATE TABLE corresponder(
 	total SMALLINT,
 	modoPago VARCHAR(20),
 	CONSTRAINT PK_Corresponder PRIMARY KEY(id_Pedido)
+);
+CREATE TABLE componer(
+	id_Pedido SERIAL,
+	id_Producto SERIAL,
+	cantidad SMALLINT,
+	CONSTRAINT PK_Componer PRIMARY KEY(id_Pedido, id_Producto),
+	CONSTRAINT FK_Componer_Pedido FOREIGN KEY(id_Pedido) REFERENCES pedido(id),
+	CONSTRAINT FK_Componer_Producto FOREIGN KEY(id_Producto) REFERENCES producto(id)
 );
 CREATE TABLE entrega_Local(
 	id_Cliente SERIAL,

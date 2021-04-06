@@ -1,8 +1,19 @@
 {
 	"workbench.colorCustomizations": {
-		"activityBar.background": "#0D332B",
-		"titleBar.activeBackground": "#13483C",
-		"titleBar.activeForeground": "#F5FCFB"
+		"activityBar.background": "#0f312c",
+		"titleBar.activeBackground": "#030a09",
+		"titleBar.activeForeground": "#e7e7e7",
+		"activityBar.activeBackground": "#0f312c",
+		"activityBar.activeBorder": "#9934ab",
+		"activityBar.foreground": "#e7e7e7",
+		"activityBar.inactiveForeground": "#e7e7e799",
+		"activityBarBadge.background": "#9934ab",
+		"activityBarBadge.foreground": "#e7e7e7",
+		"statusBar.background": "#030a09",
+		"statusBar.foreground": "#e7e7e7",
+		"statusBarItem.hoverBackground": "#0f312c",
+		"titleBar.inactiveBackground": "#030a0999",
+		"titleBar.inactiveForeground": "#e7e7e799"
 	},
 	"sqltools.connections": [
 		{
@@ -24,6 +35,67 @@
 			"database": "Hamburgueseria",
 			"username": "postgres",
 			"password": "conversandoconnadie"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5432,
+			"driver": "PostgreSQL",
+			"name": "Hamburgueseria",
+			"database": "Hamburgueseria",
+			"username": "postgres",
+			"password": "conversandoconnadie"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5432,
+			"driver": "PostgreSQL",
+			"name": "Hamburgueseria",
+			"database": "Hamburgueseria",
+			"username": "postgres",
+			"password": "root"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5432,
+			"driver": "PostgreSQL",
+			"name": "Hamburgueseria",
+			"database": "Hamburgueseria",
+			"username": "postgres",
+			"password": "root"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5432,
+			"driver": "PostgreSQL",
+			"name": "Hamburgueseria",
+			"database": "Hamburgueseria",
+			"username": "postgres",
+			"password": "root"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5432,
+			"askForPassword": true,
+			"driver": "PostgreSQL",
+			"username": "postgres",
+			"name": "Hamburgueseria",
+			"database": "Hamburgueseria"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5432,
+			"driver": "PostgreSQL",
+			"name": "Hamburgueseria",
+			"database": "Hamburgueseria",
+			"username": "postgres",
+			"password": "root"
 		}
-	]
+	],
+	"peacock.color": "#030a09"
 }
