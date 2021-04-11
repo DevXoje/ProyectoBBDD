@@ -2,56 +2,17 @@ DELETE FROM empleado;
 DELETE FROM gerente;
 --GERENTE
 INSERT INTO gerente(dni, sueldoAnual, estudios)
-VALUES(
-		'12345678P',
-		10000,
-		'Desarrollo de aplicaciones Web'
-	),
-	(
-		'12345679P',
-		10500,
-		'Desarrollo de aplicaciones Multiplataforma'
-	),
-	(
-		'12345679W',
-		11000,
-		'Administracion y Direccion de Empresas'
-	),
-	(
-		'62345679P',
-		21000,
-		'Gestion de Ventas Internacionales'
-	),
-	(
-		'92345679P',
-		30000,
-		'Direccion de Empresas'
-	),
-	(
-		'12345678A',
-		10000,
-		'Desarrollo de aplicaciones Web'
-	),
-	(
-		'12345679B',
-		10500,
-		'Desarrollo de aplicaciones Multiplataforma'
-	),
-	(
-		'12345679J',
-		11000,
-		'Administracion y Direccion de Empresas'
-	),
-	(
-		'62345679K',
-		21000,
-		'Gestion de Ventas Internacionales'
-	),
-	(
-		'92345679Z',
-		30000,
-		'Direccion de Empresas'
-	);
+VALUES('', 10000, 'Desarrollo Web'),
+	('', 10500, 'Control de Sistemas'),
+	('', 11000, 'Direccion de Empresas'),
+	('', 21000, 'Gestion de Ventas'),
+	('', 30000, 'Direccion de Empresas'),
+	('', 10000, 'Desarrollo Web'),
+	('', 10500, 'Control de Sistemas'),
+	('', 11000, 'Direccion de Empresas'),
+	('', 21000, 'Gestion de Ventas'),
+	('', 30000, 'Direccion de Empresas'),
+	('', 30000, 'Desarrollo Web');
 --EMPLEADO
 INSERT INTO empleado(dni, nombre, sueldo, dni_Gerente) --CREO que la carnilidad esta invertida
 VALUES
@@ -246,21 +207,21 @@ VALUES(1, 1),
 	(15, 15);
 --producto_Compuesto
 INSERT INTO producto_Compuesto(id_Producto1, id_Producto2, fechaFin)
-VALUES(1, 1, '31-06-2021'),
-	(2, 2, '31-12-2021'),
-	(3, 3, '31-12-2021'),
-	(4, 4, '31-12-2021'),
-	(5, 5, '31-12-2021'),
-	(6, 6, '31-12-2021'),
-	(7, 7, '31-12-2021'),
-	(8, 8, '31-12-2021'),
-	(9, 9, '31-12-2021'),
-	(10, 10, '15-06-2021'),
-	(11, 11, '155-06-2021'),
-	(12, 12, '15-06-2021'),
-	(13, 13, '15-06-2021'),
-	(14, 14, '15-06-2021'),
-	(15, 15, '15-06-2021');
+VALUES(1, 1, '2021-06-30'),
+	(2, 2, '2021-12-31'),
+	(3, 3, '2021-12-31'),
+	(4, 4, '2021-12-31'),
+	(5, 5, '2021-12-31'),
+	(6, 6, '2021-12-31'),
+	(7, 7, '2021-12-31'),
+	(8, 8, '2021-12-31'),
+	(9, 9, '2021-12-31'),
+	(10, 10, '2021-06-15'),
+	(11, 11, '2021-06-15'),
+	(12, 12, '2021-06-15'),
+	(13, 13, '2021-06-15'),
+	(14, 14, '2021-06-15'),
+	(15, 15, '2021-06-15');
 --cliente
 INSERT INTO cliente(id)
 VALUES
@@ -300,81 +261,74 @@ VALUES
 INSERT INTO cliente_Local(id_Cliente, via)
 VALUES(1, 'KIOSKO'),
 	(2, 'CAJERO'),
-	(3, ''),
-	(4, ''),
-	(5, ''),
-	(6, ''),
-	(7, ''),
-	(8, ''),
-	(9, ''),
-	(10, ''),
-	(11, ''),
-	(12, ''),
-	(13, ''),
-	(14, ''),
-	(15, '');
+	(3, 'CAJERO'),
+	(4, 'CAJERO'),
+	(5, 'CAJERO'),
+	(6, 'KIOSKO'),
+	(7, 'KIOSKO'),
+	(8, 'KIOSKO'),
+	(9, 'KIOSKO'),
+	(10, 'CAJERO'),
+	(11, 'CAJERO'),
+	(12, 'CAJERO'),
+	(13, 'COCHE'),
+	(14, 'COCHE'),
+	(15, 'COCHE');
 --cliente_Casa
 INSERT INTO cliente_Casa(id_Cliente, direccion)
-VALUES(16, ''),
-	(17, ''),
-	(18, ''),
-	(19, ''),
-	(20, ''),
-	(21, ''),
-	(22, ''),
-	(23, ''),
-	(24, ''),
-	(25, ''),
-	(26, ''),
-	(27, ''),
-	(28, ''),
-	(29, ''),
-	(30, '');
+VALUES(16, 'Calle Suiza 2'),
+	(17, 'Calle Suiza 2'),
+	(18, 'Calle Suiza 2'),
+	(19, 'Calle Suiza 2'),
+	(20, 'Calle Suiza 2'),
+	(21, 'Calle Suiza 2'),
+	(22, 'Calle Suiza 2'),
+	(23, 'Calle Suiza 2'),
+	(24, 'Calle Suiza 2'),
+	(25, 'Calle Suiza 2'),
+	(26, 'Calle Suiza 2'),
+	(27, 'Calle Suiza 2'),
+	(28, 'Calle Suiza 2'),
+	(29, 'Calle Suiza 2'),
+	(30, 'Calle Suiza 2');
 --pedido
-INSERT INTO pedido(
-		id,
-		estado,
-		fechaCompletado,
-		totalProductos
-	)
+INSERT INTO pedido(estado, fechaCompletado)
 VALUES
 	/*EN LOCAL*/
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
 	/*EN CASA*/
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4),
-	('EN PREPARACION', '10-06-2021', 4);
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10'),
+	('EN PREPARACION', '2021-06-10');
 --factura
 INSERT INTO factura(
-		id,
 		fecha,
-		total,
 		modoPago,
 		id_Cliente,
 		id_Reclamacion
@@ -382,8 +336,8 @@ INSERT INTO factura(
 VALUES --CREO QUE LA CARDINALIDAD ESTA INVERTIDA Y POR ESO ME OBLIGA A QUE TENGA RECLAMACION
 	('10-06-2021', 'EFECTIVO', 1, 1);
 --reclamacion
-INSERT INTO reclamacion(id, descripcion)
-VALUES(''),
+INSERT INTO reclamacion(descripcion)
+VALUES('Productos frios'),
 	(''),
 	(''),
 	(''),
@@ -398,6 +352,8 @@ VALUES(''),
 	(''),
 	(''),
 	('');
+SELECT *
+FROM factura;
 --caja
 INSERT INTO caja(id, saldo, id_Cliente, dni_Empleado) --CREO QUE LA CARDINALIDAD ESTA INVERTIDA Y POR ESO ME OBLIGA A QUE TENGA CLIENTE
 VALUES(250.15, X, '2876543P'),

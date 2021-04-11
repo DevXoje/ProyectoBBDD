@@ -2,20 +2,20 @@ DROP TABLE entrega_casa;
 DROP TABLE entrega_local;
 DROP TABLE corresponder;
 DROP TABLE componer;
-DROP TABLE caja;
 DROP TABLE factura;
 DROP TABLE pedido;
 DROP TABLE reclamacion;
 DROP TABLE cliente_casa;
 DROP TABLE cliente_local;
-DROP TABLE cliente;
 DROP TABLE producto_compuesto;
 DROP TABLE tener_ingrediente;
 DROP TABLE ingrediente;
 DROP TABLE cocinar;
 DROP TABLE producto;
 DROP TABLE conducir;
+DROP TABLE caja;
 DROP TABLE cajero;
+DROP TABLE cliente;
 DROP TABLE cocinero;
 DROP TABLE motero;
 DROP TABLE empleado;
@@ -98,10 +98,24 @@ CREATE TABLE cliente(
 	id SERIAL,
 	CONSTRAINT PK_Cliente PRIMARY KEY(id)
 );
+CREATE TABLE caja(
+	id SERIAL,
+	saldo SMALLINT,
+	id_Cliente SERIAL NOT NULL,
+	dni_Empleado VARCHAR(9),
+	CONSTRAINT PK_Caja PRIMARY KEY(id),
+	CONSTRAINT FK_Caja_Cliente FOREIGN KEY(id_Cliente) REFERENCES cliente(id),
+	CONSTRAINT FK_Caja_Empleado FOREIGN KEY(dni_Empleado) REFERENCES cajero(dni_Empleado)
+);
+--AQUI MAL
 CREATE TABLE cliente_Local(
 	id_Cliente SERIAL,
 	via VARCHAR(30) UNIQUE NOT NULL,
-	CONSTRAINT PK_Cliente_Local PRIMARY KEY(id_Cliente)
+	id_Caja SERIAL NOT NULL,
+	dni_Cajero VARCHAR(9),
+	CONSTRAINT PK_Cliente_Local PRIMARY KEY(id_Cliente),
+	CONSTRAINT FK_Cliente_Local_Caja FOREIGN KEY (id_Caja) REFERENCES caja(id),
+	CONSTRAINT FK_Cliente_Local_Cajero FOREIGN KEY(dni_Cajero) REFERENCES cajero(dni_Empleado)
 );
 CREATE TABLE cliente_Casa(
 	id_Cliente SERIAL,
@@ -117,7 +131,6 @@ CREATE TABLE pedido(
 	id SERIAL,
 	estado VARCHAR(20),
 	fechaCompletado DATE,
-	totalProductos SMALLINT,
 	CONSTRAINT PK_Pedido PRIMARY KEY(id)
 );
 CREATE TABLE factura(
@@ -129,15 +142,6 @@ CREATE TABLE factura(
 	CONSTRAINT PK_Factura PRIMARY KEY(id),
 	CONSTRAINT FK_Factura_Cliente FOREIGN KEY(id_Cliente) REFERENCES cliente(id),
 	CONSTRAINT FK_Factura_Reclamacion FOREIGN KEY(id_Reclamacion) REFERENCES reclamacion(id)
-);
-CREATE TABLE caja(
-	id SERIAL,
-	saldo SMALLINT,
-	id_Cliente SERIAL NOT NULL,
-	dni_Empleado VARCHAR(9),
-	CONSTRAINT PK_Caja PRIMARY KEY(id),
-	CONSTRAINT FK_Caja_Cliente FOREIGN KEY(id_Cliente) REFERENCES cliente(id),
-	CONSTRAINT FK_Caja_Empleado FOREIGN KEY(dni_Empleado) REFERENCES cajero(dni_Empleado)
 );
 CREATE TABLE corresponder(
 	id_Pedido SERIAL,
