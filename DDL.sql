@@ -107,19 +107,20 @@ CREATE TABLE caja(
 	CONSTRAINT FK_Caja_Cliente FOREIGN KEY(id_Cliente) REFERENCES cliente(id),
 	CONSTRAINT FK_Caja_Empleado FOREIGN KEY(dni_Empleado) REFERENCES cajero(dni_Empleado)
 );
---AQUI MAL
+--REVISAR VIA
 CREATE TABLE cliente_Local(
 	id_Cliente SERIAL,
-	via VARCHAR(30) UNIQUE NOT NULL,
+	via VARCHAR(30),
 	id_Caja SERIAL NOT NULL,
-	dni_Cajero VARCHAR(9),
+	dni_Cajero VARCHAR(9) UNIQUE,
 	CONSTRAINT PK_Cliente_Local PRIMARY KEY(id_Cliente),
 	CONSTRAINT FK_Cliente_Local_Caja FOREIGN KEY (id_Caja) REFERENCES caja(id),
 	CONSTRAINT FK_Cliente_Local_Cajero FOREIGN KEY(dni_Cajero) REFERENCES cajero(dni_Empleado)
 );
+--REVISAR DIRECCION
 CREATE TABLE cliente_Casa(
 	id_Cliente SERIAL,
-	direccion VARCHAR(100) UNIQUE NOT NULL,
+	direccion VARCHAR(100),
 	CONSTRAINT PK_Cliente_Casa PRIMARY KEY(id_Cliente)
 );
 CREATE TABLE reclamacion(

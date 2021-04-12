@@ -1,86 +1,140 @@
+/*DELETE FROM entrega_casa;
+ DELETE FROM entrega_local;
+ DELETE FROM corresponder;
+ DELETE FROM componer;
+ DELETE FROM factura;
+ DELETE FROM pedido;
+ DELETE FROM reclamacion;
+ DELETE FROM cliente_casa;
+ DELETE FROM cliente_local;*/
+DELETE FROM producto_compuesto;
+DELETE FROM tener_ingrediente;
+DELETE FROM ingrediente;
+DELETE FROM cocinar;
+DELETE FROM producto;
+DELETE FROM conducir;
+DELETE FROM caja;
+DELETE FROM cajero;
+DELETE FROM cliente;
+DELETE FROM cocinero;
+DELETE FROM motero;
 DELETE FROM empleado;
 DELETE FROM gerente;
 --GERENTE
 INSERT INTO gerente(dni, sueldoAnual, estudios)
-VALUES('', 10000, 'Desarrollo Web'),
-	('', 10500, 'Control de Sistemas'),
-	('', 11000, 'Direccion de Empresas'),
-	('', 21000, 'Gestion de Ventas'),
-	('', 30000, 'Direccion de Empresas'),
-	('', 10000, 'Desarrollo Web'),
-	('', 10500, 'Control de Sistemas'),
-	('', 11000, 'Direccion de Empresas'),
-	('', 21000, 'Gestion de Ventas'),
-	('', 30000, 'Direccion de Empresas'),
-	('', 30000, 'Desarrollo Web');
+VALUES('13579246X', 10000, 'Desarrollo Web'),
+	('23579246X', 10500, 'Control de Sistemas'),
+	('33579246X', 11000, 'Direccion de Empresas'),
+	('43579246X', 21000, 'Gestion de Ventas'),
+	('53579246X', 20500, 'Control de Sistemas'),
+	('63579246X', 10000, 'Desarrollo Web'),
+	('73579246X', 10500, 'Control de Sistemas'),
+	('83579246X', 11000, 'Direccion de Empresas'),
+	('93579246X', 21000, 'Gestion de Ventas'),
+	('51579246X', 20500, 'Control de Sistemas'),
+	('12579246X', 10000, 'Desarrollo Web'),
+	('23579246P', 10500, 'Control de Sistemas'),
+	('34579246X', 11000, 'Direccion de Empresas'),
+	('45579246X', 21000, 'Gestion de Ventas'),
+	('56579246X', 20500, 'Control de Sistemas'),
+	('17579246X', 10000, 'Desarrollo Web'),
+	('28579246X', 10500, 'Control de Sistemas'),
+	('39579246X', 11000, 'Direccion de Empresas'),
+	('43179246X', 21000, 'Gestion de Ventas'),
+	('53279246X', 20500, 'Control de Sistemas'),
+	('13379246X', 10000, 'Desarrollo Web'),
+	('23479246X', 10500, 'Control de Sistemas'),
+	('33579246P', 11000, 'Direccion de Empresas'),
+	('43679246X', 21000, 'Gestion de Ventas'),
+	('53779246X', 20500, 'Control de Sistemas'),
+	('13879246X', 10000, 'Desarrollo Web'),
+	('23979246X', 10500, 'Control de Sistemas'),
+	('33519246X', 11000, 'Direccion de Empresas'),
+	('43529246X', 21000, 'Gestion de Ventas'),
+	('53539246X', 20500, 'Control de Sistemas'),
+	('13549246X', 10000, 'Desarrollo Web'),
+	('23559246X', 10500, 'Control de Sistemas'),
+	('33569246X', 11000, 'Direccion de Empresas'),
+	('43509246X', 21000, 'Gestion de Ventas'),
+	('53519246X', 20500, 'Control de Sistemas'),
+	('13529246X', 10000, 'Desarrollo Web'),
+	('23539246X', 10500, 'Control de Sistemas'),
+	('33549246X', 11000, 'Direccion de Empresas'),
+	('43559246X', 21000, 'Gestion de Ventas'),
+	('53569246X', 20500, 'Control de Sistemas'),
+	('13509246X', 10000, 'Desarrollo Web'),
+	('23571246X', 10500, 'Control de Sistemas'),
+	('33572246X', 11000, 'Direccion de Empresas'),
+	('43573246X', 21000, 'Gestion de Ventas'),
+	('53574246X', 20500, 'Control de Sistemas');
 --EMPLEADO
-INSERT INTO empleado(dni, nombre, sueldo, dni_Gerente) --CREO que la carnilidad esta invertida
+INSERT INTO empleado(dni, nombre, sueldo, dni_Gerente)
 VALUES
 	/*Cajeros*/
-	('2876543P', 'Juan Sanchis', 900, '12345678P'),
-	('2876543X', 'Felipe Sanchez', 900, '12345679P'),
-	('2876543W', 'Lorena Lopez', 900, '12345679P'),
-	('2876543Y', 'Cristina Sanchez', 900, '12345679P'),
-	('2876543J', 'Ramon Williams', 900, '12345679P'),
-	('2876543Q', 'Pepe Tamarit', 900, '12345679P'),
-	('2876543Z', 'Ana Campayo', 900, '12345679P'),
-	('2876543M', 'Felipe Carbonell', 900, '12345679P'),
-	('2876543E', 'Juana Sanchez', 900, '12345679P'),
-	('2876543W', 'Ipatia Sanchis', 900, '12345679W'),
-	('2876542Q', 'Manuel Tamarit', 900, '12345679P'),
-	('2876542Z', 'Roberto Lunares', 900, '12345679P'),
-	('2876541M', 'Veronica Lopez', 900, '12345679P'),
-	('2876541E', 'Ipatia Sanchez', 900, '12345679P'),
-	('2876541W', 'David Sanchis', 900, '12345679W'),
+	('2876543P', 'Juan Sanchis', 900, '13579246X'),
+	('2876543X', 'Felipe Sanchez', 900, '23579246X'),
+	('2876543W', 'Lorena Lopez', 900, '33579246X'),
+	('2876543Y', 'Cristina Sanchez', 900, '43579246X'),
+	('2876543J', 'Ramon Williams', 900, '53579246X'),
+	('2876543Q', 'Pepe Tamarit', 900, '63579246X'),
+	('2876543Z', 'Ana Campayo', 900, '73579246X'),
+	('2876543M', 'Felipe Carbonell', 900, '83579246X'),
+	('2876543E', 'Juana Sanchez', 900, '93579246X'),
+	('2876543A', 'Ipatia Sanchis', 900, '51579246X'),
+	('2876542Q', 'Manuel Tamarit', 900, '12579246X'),
+	('2876542Z', 'Roberto Lunares', 900, '23579246P'),
+	('2876541M', 'Veronica Lopez', 900, '34579246X'),
+	('2876541E', 'Ipatia Sanchez', 900, '45579246X'),
+	('2876541W', 'David Sanchis', 900, '56579246X'),
 	/*Cocineros*/
-	('5876543P', 'David Sanchis', 1000, '12345678P'),
-	('5876543X', 'Juan Sanchez', 1000, '12345679P'),
-	('5876543W', 'Felipe Lopez', 1000, '12345679P'),
-	('5876543Y', 'Lorena Sanchez', 1000, '12345679P'),
-	('5876543J', 'Cristina Bush', 1000, '12345679P'),
-	('5876543Q', 'Ramon Tamarit', 1000, '12345679P'),
-	('5876543Z', 'Pepe Campayo', 1000, '12345679P'),
-	('5876543M', 'Ana Carbonell', 1000, '12345679P'),
-	('5876543E', 'Felipe Sanchez', 1000, '12345679P'),
-	('5876543W', 'Juana Sanchis', 1000, '12345679W'),
-	('5876542Q', 'Ipatia Tamarit', 1000, '12345679P'),
-	('5876542Z', 'Manuel Lunares', 1000, '12345679P'),
-	('5876541M', 'Roberto Lopez', 1000, '12345679P'),
-	('5876541E', 'Rosa Noel', 1000, '12345679P'),
-	('5876541W', 'Ipatia Sanchis', 1000, '12345679W'),
+	('5876543P', 'David Sanchis', 1000, '17579246X'),
+	('5876543X', 'Juan Sanchez', 1000, '28579246X'),
+	('5876543W', 'Felipe Lopez', 1000, '39579246X'),
+	('5876543Y', 'Lorena Sanchez', 1000, '43179246X'),
+	('5876543J', 'Cristina Bush', 1000, '53279246X'),
+	('5876543Q', 'Ramon Tamarit', 1000, '13379246X'),
+	('5876543Z', 'Pepe Campayo', 1000, '23479246X'),
+	('5876543M', 'Ana Carbonell', 1000, '33579246P'),
+	('5876543E', 'Felipe Sanchez', 1000, '43679246X'),
+	('5876542P', 'Juana Sanchis', 1000, '53779246X'),
+	('5876542Q', 'Ipatia Tamarit', 1000, '13879246X'),
+	('5876542Z', 'Manuel Lunares', 1000, '23979246X'),
+	('5876541M', 'Roberto Lopez', 1000, '33519246X'),
+	('5876541E', 'Rosa Noel', 1000, '43529246X'),
+	('5876541W', 'Ipatia Sanchis', 1000, '53539246X'),
 	/*Moteros*/
-	('9876543P', 'Felipe Sanchis', 950, '12345678P'),
-	('9876543X', 'Lorena Sanchez', 950, '12345679P'),
-	('9876543W', 'Cristina Lopez', 950, '12345679P'),
-	('9876543Y', 'Ramon Sanchez', 950, '12345679P'),
-	('9876543J', 'Pepe Williams', 950, '12345679P'),
-	('9876543Q', 'Ana Tamarit', 950, '12345679P'),
-	('9876543Z', 'Felipe Campayo', 950, '12345679P'),
-	('9876543M', 'Juana Carbonell', 950, '12345679P'),
-	('9876543E', 'Ipatia Sanchez', 950, '12345679P'),
-	('9876543W', 'Manuel Sanchis', 950, '12345679W'),
-	('9876542Q', 'Roberto Tamarit', 950, '12345679P'),
-	('9876542Z', 'Veronica Lunares', 950, '12345679P'),
-	('9876541M', 'Ipatia Lopez', 950, '12345679P'),
-	('9876541E', 'David Sanchez', 950, '12345679P'),
-	('9876541W', 'Jonh Sanchis', 950, '12345679W');
+	('9876543P', 'Felipe Sanchis', 950, '13549246X'),
+	('9876543X', 'Lorena Sanchez', 950, '23559246X'),
+	('9876542W', 'Cristina Lopez', 950, '33569246X'),
+	('9876543Y', 'Ramon Sanchez', 950, '43509246X'),
+	('9876543J', 'Pepe Williams', 950, '53519246X'),
+	('9876543Q', 'Ana Tamarit', 950, '13529246X'),
+	('9876543Z', 'Felipe Campayo', 950, '23539246X'),
+	('9876543M', 'Juana Carbonell', 950, '33549246X'),
+	('9876543E', 'Ipatia Sanchez', 950, '43559246X'),
+	('9876543W', 'Manuel Sanchis', 950, '53569246X'),
+	('9876542Q', 'Roberto Tamarit', 950, '13509246X'),
+	('9876542Z', 'Veronica Lunares', 950, '23571246X'),
+	('9876541M', 'Ipatia Lopez', 950, '33572246X'),
+	('9876541E', 'David Sanchez', 950, '43573246X'),
+	('9876541W', 'Jonh Sanchis', 950, '53574246X');
 --CAJERO
 INSERT INTO cajero(dni_Empleado, idiomas)
-VALUES('2876541W', 'Español'),
-	('2876543P', 'Español'),
-	('2876543X', 'Español, Ingles, Aleman'),
-	('2876541E', 'Español, Ingles, Aleman'),
-	('2876541M', 'Español, Ingles'),
-	('2876543W', 'Español, Ingles'),
-	('2876543Y', 'Español, Ingles'),
+VALUES('2876543P', 'Español'),
+	('2876543X', 'Español'),
+	('2876543W', 'Español, Ingles, Aleman'),
+	('2876543Y', 'Español, Ingles, Aleman'),
 	('2876543J', 'Español, Ingles'),
 	('2876543Q', 'Español, Ingles'),
-	('2876543Z', 'Español, Aleman'),
-	('2876542Z', 'Español, Aleman'),
-	('2876543M', 'Español, Aleman'),
+	('2876543Z', 'Español, Ingles'),
+	('2876543M', 'Español, Ingles'),
 	('2876543E', 'Español, Ingles'),
-	('2876542Q', 'Español, Ingles'),
-	('2876543W', 'Español, Ingles');
+	('2876543A', 'Español, Aleman'),
+	('2876542Q', 'Español, Aleman'),
+	('2876542Z', 'Español, Aleman'),
+	('2876541M', 'Español, Ingles'),
+	('2876541E', 'Español, Ingles'),
+	('2876541W', 'Español, Ingles');
 --COCINERO
 INSERT INTO cocinero(dni_Empleado, antiguedad)
 VALUES('5876543P', '01-02-0001'),
@@ -92,7 +146,7 @@ VALUES('5876543P', '01-02-0001'),
 	('5876543Z', '10-02-0001'),
 	('5876543M', '01-03-0002'),
 	('5876543E', '01-03-0002'),
-	('5876543W', '01-02-0002'),
+	('5876542P', '01-02-0002'),
 	('5876542Q', '11-02-0002'),
 	('5876542Z', '01-03-0002'),
 	('5876541M', '12-02-0002'),
@@ -102,7 +156,7 @@ VALUES('5876543P', '01-02-0001'),
 INSERT INTO motero(dni_Empleado, tipoCarnet)
 VALUES('9876543P', 'A1'),
 	('9876543X', 'A1'),
-	('9876543W', 'B'),
+	('9876542W', 'B'),
 	('9876543Y', 'B'),
 	('9876543J', 'A1'),
 	('9876543Q', 'A1'),
@@ -124,7 +178,7 @@ INSERT INTO conducir(
 	)
 VALUES('9876543P', 'A1', '98765-XP', '01-03-2021'),
 	('9876543X', 'A1', '88765-XP', '01-01-2021'),
-	('9876543W', 'B', '78765-XP', '01-03-2021'),
+	('9876542W', 'B', '78765-XP', '01-03-2021'),
 	('9876543Y', 'B', '68765-XP', '01-01-2021'),
 	('9876543J', 'A1', '58765-XP', '01-01-2021'),
 	('9876543Q', 'A1', '48765-XP', '01-01-2021'),
@@ -160,12 +214,12 @@ VALUES(1, '5876543P'),
 	(1, '5876543X'),
 	(2, '5876543W'),
 	(3, '5876543Y'),
-	(10, '5876543P'),
-	(11, '5876543P'),
+	(10, '5876543J'),
+	(11, '5876543Q'),
 	(12, '5876543Z'),
-	(13, '5876543P'),
+	(13, '5876543M'),
 	(3, '5876543E'),
-	(4, '5876543W'),
+	(4, '5876542P'),
 	(5, '5876542Q'),
 	(6, '5876542Z'),
 	(7, '5876541M'),
@@ -257,23 +311,40 @@ VALUES
 	(DEFAULT),
 	(DEFAULT),
 	(DEFAULT);
+--caja
+INSERT INTO caja(saldo, id_Cliente, dni_Empleado)
+VALUES(250.15, 1, '2876543P'),
+	(20.01, 2, '2876543X'),
+	(00.00, 3, '2876543W'),
+	(100.00, 4, '2876543Y'),
+	(100.00, 5, '2876543J'),
+	(100.00, 6, '2876543Q'),
+	(100.00, 7, '2876543Z'),
+	(00.00, 8, '2876543M'),
+	(35.01, 9, '2876543E'),
+	(270.53, 10, '2876543W'),
+	(60.04, 11, '2876542Q'),
+	(100.00, 12, '2876542Z'),
+	(100.00, 13, '2876541M'),
+	(100.00, 14, '2876541E'),
+	(00.00, 15, '2876541W');
 --cliente_Local
-INSERT INTO cliente_Local(id_Cliente, via)
-VALUES(1, 'KIOSKO'),
-	(2, 'CAJERO'),
-	(3, 'CAJERO'),
-	(4, 'CAJERO'),
-	(5, 'CAJERO'),
-	(6, 'KIOSKO'),
-	(7, 'KIOSKO'),
-	(8, 'KIOSKO'),
-	(9, 'KIOSKO'),
-	(10, 'CAJERO'),
-	(11, 'CAJERO'),
-	(12, 'CAJERO'),
-	(13, 'COCHE'),
-	(14, 'COCHE'),
-	(15, 'COCHE');
+INSERT INTO cliente_Local(id_Cliente, via, id_Caja, dni_Cajero) --AQUI FALLA
+VALUES(1, 'KIOSKO', 1, '2876543P'),
+	(2, 'CAJERO', 2, '2876543X'),
+	(3, 'CAJERO', 3, '2876543W'),
+	(4, 'CAJERO', 4, '2876543Y'),
+	(5, 'CAJERO', 5, '2876543J'),
+	(6, 'KIOSKO', 6, '2876543Q'),
+	(7, 'KIOSKO', 7, '2876543Z'),
+	(8, 'KIOSKO', 8, '2876543M'),
+	(9, 'KIOSKO', 9, '2876543E'),
+	(10, 'CAJERO', 10, '2876543A'),
+	(11, 'CAJERO', 11, '2876542Q'),
+	(12, 'CAJERO', 12, '2876542Z'),
+	(13, 'COCHE', 13, '2876541M'),
+	(14, 'COCHE', 14, '2876541E'),
+	(15, 'COCHE', 15, '2876541W');
 --cliente_Casa
 INSERT INTO cliente_Casa(id_Cliente, direccion)
 VALUES(16, 'Calle Suiza 2'),
@@ -295,10 +366,10 @@ VALUES(16, 'Calle Suiza 2'),
 INSERT INTO pedido(estado, fechaCompletado)
 VALUES
 	/*EN LOCAL*/
-	('EN PREPARACION', '2021-06-10'),
-	('EN PREPARACION', '2021-06-10'),
-	('EN PREPARACION', '2021-06-10'),
-	('EN PREPARACION', '2021-06-10'),
+	('COMPLETADO', '2020-04-12'),
+	('COMPLETADO', '2020-04-12'),
+	('COMPLETADO', '2020-04-12'),
+	('COMPLETADO', '2020-04-12'),
 	('EN PREPARACION', '2021-06-10'),
 	('EN PREPARACION', '2021-06-10'),
 	('EN PREPARACION', '2021-06-10'),
@@ -311,10 +382,10 @@ VALUES
 	('EN PREPARACION', '2021-06-10'),
 	('EN PREPARACION', '2021-06-10'),
 	/*EN CASA*/
-	('EN PREPARACION', '2021-06-10'),
-	('EN PREPARACION', '2021-06-10'),
-	('EN PREPARACION', '2021-06-10'),
-	('EN PREPARACION', '2021-06-10'),
+	('COMPLETADO', '2020-04-12'),
+	('COMPLETADO', '2020-04-12'),
+	('COMPLETADO', '2020-04-12'),
+	('COMPLETADO', '2020-04-12'),
 	('EN PREPARACION', '2021-06-10'),
 	('EN PREPARACION', '2021-06-10'),
 	('EN PREPARACION', '2021-06-10'),
@@ -326,6 +397,23 @@ VALUES
 	('EN PREPARACION', '2021-06-10'),
 	('EN PREPARACION', '2021-06-10'),
 	('EN PREPARACION', '2021-06-10');
+--reclamacion
+INSERT INTO reclamacion(descripcion)
+VALUES('Productos frios'),
+	('Faltan ingredientes'),
+	('Productos en mal estado'),
+	('Mala atencion del personal'),
+	('Pedido tardo mucho'),
+	('Productos frios'),
+	('Faltan ingredientes'),
+	('Productos en mal estado'),
+	('Mala atencion del personal'),
+	('Pedido tardo mucho'),
+	('Productos frios'),
+	('Faltan ingredientes'),
+	('Productos en mal estado'),
+	('Mala atencion del personal'),
+	('Pedido tardo mucho');
 --factura
 INSERT INTO factura(
 		fecha,
@@ -333,44 +421,21 @@ INSERT INTO factura(
 		id_Cliente,
 		id_Reclamacion
 	)
-VALUES --CREO QUE LA CARDINALIDAD ESTA INVERTIDA Y POR ESO ME OBLIGA A QUE TENGA RECLAMACION
-	('10-06-2021', 'EFECTIVO', 1, 1);
---reclamacion
-INSERT INTO reclamacion(descripcion)
-VALUES('Productos frios'),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	(''),
-	('');
-SELECT *
-FROM factura;
---caja
-INSERT INTO caja(id, saldo, id_Cliente, dni_Empleado) --CREO QUE LA CARDINALIDAD ESTA INVERTIDA Y POR ESO ME OBLIGA A QUE TENGA CLIENTE
-VALUES(250.15, X, '2876543P'),
-	(20.01, X, '2876543X'),
-	(00.00, X, '2876543W'),
-	(100.00, X, '2876543Y'),
-	(100.00, X, '2876543J'),
-	(100.00, X, '2876543Q'),
-	(100.00, X, '2876543Z'),
-	(00.00, X, '2876543M'),
-	(35.01, X, '2876543E'),
-	(270.53, X, '2876543W'),
-	(60.04, X, '2876542Q'),
-	(100.00, X, '2876542Z'),
-	(100.00, X, '2876541M'),
-	(100.00, X, '2876541E'),
-	(00.00, X, '2876541W');
+VALUES ('2021-06-10', 'EFECTIVO', 1, 1),
+	('2021-06-10', 'EFECTIVO', 2, 2),
+	('2021-06-10', 'EFECTIVO', 3, 3),
+	('2021-06-10', 'EFECTIVO', 4, 4),
+	('2021-06-10', 'EFECTIVO', 5, 5),
+	('2021-06-10', 'EFECTIVO', 6, 6),
+	('2021-06-10', 'EFECTIVO', 7, 7),
+	('2021-06-10', 'EFECTIVO', 8, 8),
+	('2021-06-10', 'EFECTIVO', 9, 9),
+	('2021-06-10', 'EFECTIVO', 10, 10),
+	('2021-06-10', 'EFECTIVO', 11, 11),
+	('2021-06-10', 'EFECTIVO', 12, 12),
+	('2021-06-10', 'EFECTIVO', 13, 13),
+	('2021-06-10', 'EFECTIVO', 14, 14),
+	('2021-06-10', 'EFECTIVO', 15, 15);
 --corresponder
 INSERT INTO corresponder(
 		id_Pedido,
@@ -385,21 +450,21 @@ INSERT INTO corresponder(
 VALUES();
 --entrega_Local
 INSERT INTO entrega_Local(id_Cliente, id_Pedido, dni_Empleado)
-VALUES(1, 1, '2876541W'),
-	(1, 1, '2876543P'),
-	(1, 1, '2876543X'),
-	(1, 1, '2876541E'),
-	(1, 1, '2876541M'),
-	(1, 1, '2876543W'),
-	(1, 1, '2876543Y'),
-	(1, 1, '2876543J'),
-	(1, 1, '2876543Q'),
-	(1, 1, '2876543Z'),
-	(1, 1, '2876542Z'),
-	(1, 1, '2876543M'),
-	(1, 1, '2876543E'),
-	(1, 1, '2876542Q'),
-	(1, 1, '2876543W');
+VALUES(1, 1, '2876543P'),
+	(2, 2, '2876543X'),
+	(3, 3, '2876543W'),
+	(4, 4, '2876543Y'),
+	(5, 5, '2876543J'),
+	(6, 6, '2876543Q'),
+	(7, 7, '2876543Z'),
+	(8, 8, '2876543M'),
+	(9, 9, '2876543E'),
+	(10, 10, '2876543A'),
+	(11, 11, '2876542Q'),
+	(12, 12, '2876542Z'),
+	(13, 13, '2876541M'),
+	(14, 14, '2876541E'),
+	(15, 15, '2876541W');
 --entrega_Casa
 INSERT INTO entrega_Casa(id_Cliente, id_Pedido, dni_Empleado)
 VALUES(16, 16, '9876543P'),
